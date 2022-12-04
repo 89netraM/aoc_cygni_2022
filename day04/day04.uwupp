@@ -1,0 +1,122 @@
+envs iws wead("/proc/self/environ")
+envs iws spwit(envs[0], "\0")
+
+part iws 1
+
+i iws 0
+OwO *notices i wess twan wength(envs)*
+	*notices envs[i] eqwall twoo "part=part2"*
+		part iws 2
+	stawp
+
+	i iws i pwus 1
+stawp
+
+nyaa *parse(str)*
+	num iws 0
+
+	chars iws spwit(str, "")
+	i iws 0
+	OwO *notices i wess twan wength(chars)*
+		num iws num twimes 10
+		*notices chars[i] eqwall twoo "1"*
+			num iws num pwus 1
+		stawp
+		*notices chars[i] eqwall twoo "2"*
+			num iws num pwus 2
+		stawp
+		*notices chars[i] eqwall twoo "3"*
+			num iws num pwus 3
+		stawp
+		*notices chars[i] eqwall twoo "4"*
+			num iws num pwus 4
+		stawp
+		*notices chars[i] eqwall twoo "5"*
+			num iws num pwus 5
+		stawp
+		*notices chars[i] eqwall twoo "6"*
+			num iws num pwus 6
+		stawp
+		*notices chars[i] eqwall twoo "7"*
+			num iws num pwus 7
+		stawp
+		*notices chars[i] eqwall twoo "8"*
+			num iws num pwus 8
+		stawp
+		*notices chars[i] eqwall twoo "9"*
+			num iws num pwus 9
+		stawp
+
+		i iws i pwus 1
+	stawp
+wetuwn num
+
+nyaa *count(include)*
+	sum iws 0
+	input iws wead("input.txt")
+
+	i iws 0
+	OwO *notices i wess twan wength(input)*
+		chars iws spwit(input[i], "")
+		*notices wength(chars) gweatew twan 0*
+			pairs iws spwit(input[i], ",")
+			first iws spwit(pairs[0], "-")
+			second iws spwit(pairs[1], "-")
+			l1 iws parse(first[0])
+			r1 iws parse(first[1])
+			l2 iws parse(second[0])
+			r2 iws parse(second[1])
+
+			sum iws sum pwus include(l1, r1, l2, r2)
+		stawp
+
+		i iws i pwus 1
+	stawp
+wetuwn sum
+
+*notices part eqwall twoo 1*
+	nyaa *contains(l1, r1, l2, r2)*
+		c iws 0
+		*notices r2 minwus l2 gweatew twan r1 minwus l1*
+			lt iws l1
+			rt iws r1
+			l1 iws l2
+			r1 iws r2
+			l2 iws lt
+			r2 iws rt
+		stawp
+
+		*notices l2 minwus l1 gweatew twan -1*
+			*notices r1 minwus r2 gweatew twan -1*
+				c iws 1
+			stawp
+		stawp
+	wetuwn c
+	nuzzels(count(contains))
+stawp
+*notices part eqwall twoo 2*
+	nyaa *overlaps(l1, r1, l2, r2)*
+		c iws 0
+		*notices l2 minwus l1 gweatew twan -1*
+			*notices r1 minwus l2 gweatew twan -1*
+				c iws 1
+			stawp
+		stawp
+		*notices r2 minwus l1 gweatew twan -1*
+			*notices r1 minwus r2 gweatew twan -1*
+				c iws 1
+			stawp
+		stawp
+		*notices l1 minwus l2 gweatew twan -1*
+			*notices r2 minwus l1 gweatew twan -1*
+				c iws 1
+			stawp
+		stawp
+		*notices r1 minwus l2 gweatew twan -1*
+			*notices r2 minwus r1 gweatew twan -1*
+				c iws 1
+			stawp
+		stawp
+	wetuwn c
+	nuzzels(count(overlaps))
+stawp
