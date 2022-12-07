@@ -1,13 +1,10 @@
-FROM haskell:9 as builder
-WORKDIR /day07
-RUN cabal update
-COPY ./day07.cabal .
-RUN cabal new-build --only-dependencies
+FROM rust:1.65 as builder
+WORKDIR /aoc
+RUN rustup override set nightly
 COPY . .
-RUN cabal new-install --installdir .
+RUN cargo install --path .
 
 FROM debian:bullseye
 WORKDIR /
-COPY ./input.txt .
-COPY --from=builder /day07/day07 .
+COPY --from=builder /usr/local/cargo/bin/day07 .
 ENTRYPOINT ./day07
