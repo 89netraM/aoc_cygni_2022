@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>AoC.Year2022.Day24</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PublishAot>true</PublishAot>
+		<StripSymbols>true</StripSymbols>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<NoWarn>$(NoWarn);8509</NoWarn>
+		<NoWarn>$(NoWarn);8524</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="OptimizedPriorityQueue" Version="5.1.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="input.txt" />
+	</ItemGroup>
+</Project>
